@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Algoritma sorting</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js" ></script>
+    <style>
+      .background {
+        background-image: url("background.jpg");
+        background-size:100% 100%;
+        opacity: 0.1;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top:0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+    </div>
+    <div class="container text-center h-100">
+      <div class="row align-items-center h-100">
+        <div class="col-10 mx-auto">
+          <u><h4 class="mb-3">Algoritma Sorting</h4></u>
+          <p>Masukkan angka atau huruf yang ingin disusun (Misal : hello world)</p>
+          <div class="input-group mb-4">
+            <input type="text" name="nilai" id="nilai" class="form-control">
+            <button onclick="susun()" class="btn btn-success">Susun</button>
+          </div>
+          <p id="sebelum"></p>
+          <p id="setelah"></p><hr/>
+          <p>Mohammad Fatoni <br/> 53417687 <br/> 3IA88</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+function susun() {
+  arr = document.getElementById("nilai").value.split("");
+  document.getElementById("sebelum").innerHTML = "Hasil yang belum tersusun:"+ arr;
+  for (let j = arr.length - 1; j > 0; j--) {
+    for (let i = 0; i < j; i++) {
+      if (arr[i] > arr[i + 1]) {
+        let temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+      }
+    }
+  }
+  document.getElementById("setelah").innerHTML = "Hasil yang telah tersusun:"+arr;
+}
+</script>
